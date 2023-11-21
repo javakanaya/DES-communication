@@ -19,9 +19,17 @@ def binary_to_text(binary_list):
     text = ""
     for i in range(0, len(binary_str), 8):
         char_binary = binary_str[i:i+8]
-        char = chr(int(char_binary, 2))
-        text += char
+        try:
+            char = chr(int(char_binary, 2))
+            # Check if the character is printable ASCII
+            if not (32 <= ord(char) <= 126):
+                text += ' '  # Replace non-printable characters with empty space
+            else:
+                text += char
+        except ValueError:
+            text += ' '  # Replace invalid characters with empty space
     return text
+
 
 
 def binary_to_hex(binary_str):
