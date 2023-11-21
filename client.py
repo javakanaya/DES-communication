@@ -41,7 +41,7 @@ def receive_messages(client_socket):
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect to the server
-host = '127.0.0.1'
+host = '10.47.1.2'
 port = 12345
 client_socket.connect((host, port))
 

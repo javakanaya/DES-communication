@@ -44,7 +44,7 @@ def handle_client(client_socket, addr, clients):
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to a specific address and port
-host = '127.0.0.1'
+host = '10.47.1.2'
 port = 12345
 server_socket.bind((host, port))
 
