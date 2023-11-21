@@ -1,6 +1,6 @@
 import socket
 from threading import Thread
-from des import binary_to_hex
+from des import binary_to_text
 
 # Inside the handle_client function
 def handle_client(client_socket, addr, clients):
@@ -19,7 +19,7 @@ def handle_client(client_socket, addr, clients):
 
             length = message_data['length']
             encrypted_bin_message = message_data['encrypted_bin_message']
-            print(f"message: {binary_to_hex(encrypted_bin_message)}")
+            print(f"message: {binary_to_text(encrypted_bin_message)}")
 
             # Broadcast the message to all clients
             for other_client, other_addr in clients:

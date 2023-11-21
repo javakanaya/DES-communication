@@ -29,7 +29,7 @@ def receive_messages(client_socket):
             decrypted_message = binary_to_text(decrypted_bin_message)
 
             print(f"Received from {source}:")
-            print(f"Raw         : {encrypted_bin_message}")
+            print(f"Raw         : {binary_to_text(encrypted_bin_message)}")
             print(f"Decrypted   : {decrypted_message[:length]}")
     except Exception as e:
         print(f"Error receiving messages: {e}")
